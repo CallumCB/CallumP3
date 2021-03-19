@@ -52,9 +52,12 @@ def randomSearch():
 def linearSearch():
     print("We're going to search the list")
     searchItem=input("What are you looking for?  ")
+    numAm=0
     for x in range(len(myList)):
-        if mylist[x]==int(searchItem):
+        if myList[x] == int(searchItem):
+            numAm = munAm + 1
             print("Your number is at index {}".format(x))
-    
+    print("The number {}".format(searchItem))
+    print("appeared {} times".format(numAm))
 if __name__ == "__main__":
     mainProgram()
