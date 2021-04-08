@@ -12,9 +12,11 @@ def mainProgram():
 4. Sort list
 5. Pick random number from list
 6. Search in list
-7. Print list
-8. Print lists
-9. End
+7. Print original list
+8. Print changed lists
+9. interactive
+10. recursive
+11. End
     """)
             if choice == "1":
                 addToList()
@@ -32,6 +34,8 @@ def mainProgram():
                 print(myList)
             elif choice=="8":
                 printLists()
+            elif choice=="9":
+                interactiveBinarySearch()
             else:
                 break
         except:
@@ -86,6 +90,33 @@ def linearSearch():
             print("Your number is at index {}".format(x))
     print("The number {}".format(searchItem))
     print("appeared {} times".format(numAm))
+    
+def interactiveBinarySearch(unique_list, x):
+    low=0
+    high=len(unique_list)-1
+    mid=0
 
+    while low <= high:
+        mid=(high+low)//2
+        if unique_list[mid]>x:
+            low=mid+1
+        elif unique_list[mid]>x:
+            high=mid-1
+        else
+            return mid
+    return -1
+
+def recursiveBinarySearch(unique_list, low, high, x):
+    if high>=low:
+        mid=(high+low)//2
+        if unique_list[mid]==x:
+            print("your number is at index position {}".format(mid))
+            return mid
+        elif unique_list[mid] > x:
+            return recursiveBinarySearch(unique_list, low, mid -1, x)
+        else:
+            return recursiveBinarySearch(unique_list, mid + 1, high, x)
+    else:
+        print("That number isn'tin this list.")
 if __name__ == "__main__":
     mainProgram()
